@@ -20,10 +20,10 @@ namespace Boardify.Controllers
         [Route("registration")]
         public Response register(Users users)
         {
-            Response response = new Response();
+          
             DAL dal = new DAL();
             SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("BoardifyCS").ToString());
-            response = dal.register(users, connection);
+            Response response = dal.register(users, connection);
             return response;
         }
 
@@ -32,10 +32,32 @@ namespace Boardify.Controllers
         public Response login(Users users) 
         {
             DAL dal = new DAL();
-            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("").ToString());
-            Response response = new Response();
-            response = dal.Login(users, connection);
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("BoardifyCS").ToString());
+            Response response = dal.login(users, connection);
             return response;
         }
+
+        [HttpPost]
+        [Route("viewUser")]
+        public Response viewUser(Users users) 
+        {
+            DAL dal = new DAL();
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("BoardifyCS").ToString());
+            Response response = dal.viewUser(users, connection);
+            return response;    
+
+        }
+
+        [HttpPost]
+        [Route("updateProfile")]
+        public Response updateUser(Users users) 
+        { 
+            DAL dal = new DAL();
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("BoardifyCS").ToString());
+            Response response = dal.updateProfile(users, connection);
+            return response;
+        }
+
+
     }
 }
