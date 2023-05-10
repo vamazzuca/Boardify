@@ -15,8 +15,7 @@ namespace Boardify.Models
             cmd.Parameters.AddWithValue("@LastName", users.LastName);
             cmd.Parameters.AddWithValue("@Password", users.Password);
             cmd.Parameters.AddWithValue("@Email", users.Email);
-            cmd.Parameters.AddWithValue("@Type", "Users");
-            cmd.Parameters.AddWithValue("@Type", "Pending");
+            cmd.Parameters.AddWithValue("@Type", users.Type);
             connection.Open();
             int i = cmd.ExecuteNonQuery();
             connection.Close();
@@ -131,8 +130,8 @@ namespace Boardify.Models
             cmd.Parameters.AddWithValue("@UnitPrice", cart.UnitPrice);
             cmd.Parameters.AddWithValue("@Discount", cart.Discount);
             cmd.Parameters.AddWithValue("@Quantity", cart.Quantity);
-            cmd.Parameters.AddWithValue("@TotalPrice", cart.UserID);
-            cmd.Parameters.AddWithValue("@ProduceID", cart.ProductID);
+            cmd.Parameters.AddWithValue("@TotalPrice", cart.TotalPrice);
+            cmd.Parameters.AddWithValue("@ProductID", cart.ProductID);
             connection.Open();
             int i = cmd.ExecuteNonQuery();
             connection.Close();

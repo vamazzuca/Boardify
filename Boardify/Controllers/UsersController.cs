@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Boardify.Controllers
 {
@@ -48,7 +49,7 @@ namespace Boardify.Controllers
 
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("updateProfile")]
         public Response updateUser(Users users) 
         { 
