@@ -26,5 +26,46 @@ namespace Boardify.Controllers
             Response response = dal.addToCart(cart, connection);
             return response;
         }
+
+        [HttpDelete]
+        [Route("deleteFromCart")]
+        public Response deleteFromCart(Cart cart)
+        {
+            DAL dal = new DAL();
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("BoardifyCS").ToString());
+            Response response = dal.deleteFromCart(cart, connection);
+            return response;
+        }
+
+        [HttpPut]
+        [Route("updateFromCart")]
+        public Response updateFromCart(Cart cart)
+        {
+            DAL dal = new DAL();
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("BoardifyCS").ToString());
+            Response response = dal.updateFromCart(cart, connection);
+            return response;
+        }
+
+        [HttpGet]
+        [Route("getProducts")]
+        public Response getProducts()
+        {
+            DAL dal = new DAL();
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("BoardifyCS").ToString());
+            Response response = dal.productsList(connection);
+            return response;
+        }
+
+        [HttpGet]
+        [Route("getCart")]
+        public Response getCart()
+        {
+            DAL dal = new DAL();
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("BoardifyCS").ToString());
+            Response response = dal.cartList(connection);
+            return response;
+        }
+
     }
 }

@@ -17,14 +17,38 @@ namespace Boardify.Controllers
         }
 
         [HttpPost]
-        [Route("addUpdateProducts")]
+        [Route("addProducts")]
 
-        public Response addUpdateProducts(Products product)
+        public Response addProducts(Products product)
         {
             DAL dal = new DAL();
             SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("BoardifyCS").ToString());
-            Response response = dal.addUpdateProducts(product, connection);
+            Response response = dal.addProducts(product, connection);
             return response;
         }
+
+        [HttpPut]
+        [Route("updateProducts")]
+
+        public Response updateProducts(Products product)
+        {
+            DAL dal = new DAL();
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("BoardifyCS").ToString());
+            Response response = dal.updateProducts(product, connection);
+            return response;
+        }
+
+        [HttpDelete]
+        [Route("deleteProducts")]
+
+        public Response deleteProducts(Products product)
+        {
+            DAL dal = new DAL();
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("BoardifyCS").ToString());
+            Response response = dal.deleteProducts(product, connection);
+            return response;
+        }
+
+
     }
 }
