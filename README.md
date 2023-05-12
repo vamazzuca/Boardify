@@ -1,2 +1,2 @@
 # Boardify
- E-commerce site for keyboards.
+ E-commerce site for Mechanical keyboards.
