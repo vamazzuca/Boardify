@@ -339,11 +339,10 @@ namespace Boardify.Models
             return response;
         }
 
-        public Response cartList(Users users, Cart cart, SqlConnection connection)
+        public Response cartList(Cart cart, SqlConnection connection)
         {
             Response response = new Response();
             SqlDataAdapter da = new SqlDataAdapter("sp_getCart", connection);
-            da.SelectCommand.Parameters.AddWithValue("@UserID", users.ID);
             da.SelectCommand.Parameters.AddWithValue("@CartID", cart.ID);
             DataTable dt = new DataTable();
             da.Fill(dt);

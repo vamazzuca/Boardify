@@ -59,11 +59,11 @@ namespace Boardify.Controllers
 
         [HttpGet]
         [Route("getCart")]
-        public Response getCart()
+        public Response getCart(Cart cart)
         {
             DAL dal = new DAL();
             SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("BoardifyCS").ToString());
-            Response response = dal.cartList(connection);
+            Response response = dal.cartList(cart, connection);
             return response;
         }
 
