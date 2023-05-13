@@ -24,7 +24,12 @@ export default function Header() {
                 <Link to="/cart">
                     <ShoppingBagIcon></ShoppingBagIcon>
                 </Link>
-                <Button style={ {backgroundColor: "#BB86FC", fontSize: "14px", color:"#212121", fontWeight: "bold"}} variant="contained">Log In</Button>
+                <Button style={{
+                    backgroundColor: "#BB86FC",
+                    fontSize: "14px",
+                    color: "#212121",
+                    fontWeight: "bold"
+                }} variant="contained">Log In</Button>
             </div>
         </div>
     )

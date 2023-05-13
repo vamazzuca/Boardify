@@ -1,0 +1,61 @@
+.footer {
+    box-sizing: border-box;
+    width: 100vw;
+    background: #222222;
+    display: flex;
+    justify-content: space-between;
+    cursor: default;
+    padding: 0rem 1rem;
+    div {
+        padding: 2rem;
+        .form {
+            height: 2.2rem;
+            padding: 0;
+            display: flex;
+            input {
+                border:#222222 solid 1px;
+                outline: none;
+                background-color: #BB86FC;
+                
+                &::placeholder {
+                    padding: 0.4rem;
+                }
+            }
+            button {
+                font-size: 1rem;
+                font-weight: 600;
+                padding: 0.2rem 1rem;
+                background: #BB86FC;
+                border: none;
+                color: #212121;
+                margin-left: 0.5rem;
+                cursor: pointer;
+            }
+        }
+        h1,
+        h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #BB86FC;
+        }
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 200;
+        }
+        p,
+        a {
+            color: #BB86FC;
+            font-size: 1rem;
+            font-weight: 100;
+        }
+        .links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-direction: column;
+            padding: 0;
+        }
+    }
+    
+}
