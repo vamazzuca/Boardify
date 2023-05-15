@@ -1,0 +1,38 @@
+.login{
+    display: flex;
+    box-sizing: border-box;
+    padding: 8rem 2rem;
+    justify-content: center;
+    align-items: center;
+    color: #BB86FC;
+    .form{
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: center;
+        width: 430px;
+        height: 520px;
+        padding: 4rem 0;
+        position: relative;
+        background: #222222;
+        
+        
+        .inputs{
+            display: flex;
+            padding: 4rem 0;
+            flex-direction: column;
+            width: 80%;
+            gap: 2rem;
+            
+            
+            
+        }
+        h1{
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 100;
+        }
+
+        
+    }
+}

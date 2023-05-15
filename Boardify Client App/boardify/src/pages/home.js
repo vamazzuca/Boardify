@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import "../styles/home.scss"
-import { easing, fadeInDown, fadeInLeft, fadeInRight, fadeInUp } from "../animations/variants";
+import { easing, fadeInRight, fadeInUp } from "../animations/variants";
 
 export default function Home() {
     return (
