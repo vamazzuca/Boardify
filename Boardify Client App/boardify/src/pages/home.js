@@ -54,7 +54,7 @@ function Banner() {
                     </motion.div>
                 </Link>
             </motion.div>
-            <img src={require("../images/banner.jpg")} alt="home-main"/>
+            <img src={require("../images/banner.avif")} alt="home-main"/>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-.login{
+.register{
     display: flex;
     box-sizing: border-box;
     padding: 8rem 2rem;
@@ -33,11 +33,6 @@
             a {
                 width: 80%;
                 color: #BB86FC;
-            }
-            form{
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
             }
             
             

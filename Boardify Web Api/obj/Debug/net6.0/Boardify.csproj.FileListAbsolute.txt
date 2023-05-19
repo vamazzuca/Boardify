@@ -74,3 +74,41 @@ C:\Users\mazzu\Documents\GitHub\Boardify\Boardify\obj\Debug\net6.0\refint\Boardi
 C:\Users\mazzu\Documents\GitHub\Boardify\Boardify\obj\Debug\net6.0\Boardify.pdb
 C:\Users\mazzu\Documents\GitHub\Boardify\Boardify\obj\Debug\net6.0\Boardify.genruntimeconfig.cache
 C:\Users\mazzu\Documents\GitHub\Boardify\Boardify\obj\Debug\net6.0\ref\Boardify.dll
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\appsettings.json
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\Boardify.exe
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\Boardify.deps.json
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\Boardify.runtimeconfig.json
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\Boardify.dll
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\Boardify.pdb
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\Boardify.csproj.AssemblyReference.cache
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\Boardify.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\Boardify.AssemblyInfoInputs.cache
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\Boardify.AssemblyInfo.cs
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\Boardify.csproj.CoreCompileInputs.cache
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\Boardify.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\Boardify.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\staticwebassets\msbuild.Boardify.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\staticwebassets\msbuild.build.Boardify.props
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Boardify.props
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Boardify.props
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\scopedcss\bundle\Boardify.styles.css
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\Boardify.csproj.CopyComplete
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\Boardify.dll
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\refint\Boardify.dll
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\Boardify.pdb
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\Boardify.genruntimeconfig.cache
+C:\Users\mazzu\Documents\GitHub\Boardify\Boardify Web Api\obj\Debug\net6.0\ref\Boardify.dll

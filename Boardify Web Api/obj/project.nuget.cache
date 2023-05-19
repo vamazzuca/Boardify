@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CDQ045TUV8i3AldgPk5QcMcMGtnc9q7HBSx5f8vzckuvXlFsmoh2btHtv7a00IVMcdY6gEXLJOs7j6m7wCk8gA==",
+  "dgSpecHash": "tDtqKHLUN0/hzYy0hTf2o8BxrkomNt/A0RdIEaTjt4uercX0kdaApRHtyhql/u0CKvLhbDM14o1H6It2iGTO4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mazzu\\Documents\\GitHub\\Boardify\\Boardify\\Boardify.csproj",
+  "projectFilePath": "C:\\Users\\mazzu\\Documents\\GitHub\\Boardify\\Boardify Web Api\\Boardify.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mazzu\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\mazzu\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

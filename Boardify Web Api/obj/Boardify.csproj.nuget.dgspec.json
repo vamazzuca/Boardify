@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mazzu\\Documents\\GitHub\\Boardify\\Boardify\\Boardify.csproj": {}
+    "C:\\Users\\mazzu\\Documents\\GitHub\\Boardify\\Boardify Web Api\\Boardify.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mazzu\\Documents\\GitHub\\Boardify\\Boardify\\Boardify.csproj": {
+    "C:\\Users\\mazzu\\Documents\\GitHub\\Boardify\\Boardify Web Api\\Boardify.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mazzu\\Documents\\GitHub\\Boardify\\Boardify\\Boardify.csproj",
+        "projectUniqueName": "C:\\Users\\mazzu\\Documents\\GitHub\\Boardify\\Boardify Web Api\\Boardify.csproj",
         "projectName": "Boardify",
-        "projectPath": "C:\\Users\\mazzu\\Documents\\GitHub\\Boardify\\Boardify\\Boardify.csproj",
+        "projectPath": "C:\\Users\\mazzu\\Documents\\GitHub\\Boardify\\Boardify Web Api\\Boardify.csproj",
         "packagesPath": "C:\\Users\\mazzu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mazzu\\Documents\\GitHub\\Boardify\\Boardify\\obj\\",
+        "outputPath": "C:\\Users\\mazzu\\Documents\\GitHub\\Boardify\\Boardify Web Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mazzu\\AppData\\Roaming\\NuGet\\NuGet.Config",
