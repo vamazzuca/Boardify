@@ -47,5 +47,15 @@
         align-items: center;
         justify-content: center;
         gap: 1rem;
+
+        .MuiButton-outlined {
+            border-color: #BB86FC !important;
+        }
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
     }
 }

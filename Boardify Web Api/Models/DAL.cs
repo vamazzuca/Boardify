@@ -17,19 +17,21 @@ namespace Boardify.Models
             cmd.Parameters.AddWithValue("@Password", users.Password);
             cmd.Parameters.AddWithValue("@Email", users.Email);
             cmd.Parameters.AddWithValue("@Type", "user");
+            cmd.Parameters.Add("@ErrorMessage", System.Data.SqlDbType.Char, 200);
+            cmd.Parameters["@ErrorMessage"].Direction = System.Data.ParameterDirection.Output;
             connection.Open();
             int i = cmd.ExecuteNonQuery();
             connection.Close();
-
+            string message = (string)cmd.Parameters["@ErrorMessage"].Value;
             if (i > 0) 
             {
                 response.StatusCode = 200;
-                response.StatusMessage = "User registered successfully";
+                response.StatusMessage = message;
             }
             else
             {
                 response.StatusCode = 100;
-                response.StatusMessage = "User registration failed";
+                response.StatusMessage = message;
             }
 
             return response;
@@ -62,7 +64,7 @@ namespace Boardify.Models
             {
                 response.StatusCode = 100;
                 response.StatusMessage = "Login Failed. Incorrect Username or Password";
-                response.user = null;
+                response.user = user;
             }
             return response;
         }

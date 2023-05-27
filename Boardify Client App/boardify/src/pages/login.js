@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { string, z } from "zod"
 import axios from "axios"
 import { useState } from "react";
+import useAuth from "../hooks/useAuth";
 
 
 export default function Login() {
@@ -15,12 +16,12 @@ export default function Login() {
         password: string()
     })
     
-
     const { register, handleSubmit, formState, reset} = useForm({ resolver: zodResolver(schema) });
     const navigate = useNavigate();
     const [errorState, setErrorState] = useState("");
+    const { setAuth } = useAuth();
 
-    const handleSave = async (formValues) => {
+    const handleLogin = async (formValues) => {
 
         const data = {
             Email: formValues.email,
@@ -31,7 +32,12 @@ export default function Login() {
             .then((result) => {
                 const dt = result.data;
                 if (dt.statusCode === 200) {
-                    
+                    const email = dt.user.email;
+                    const id = dt.user.id;
+                    const type = dt.user.type;
+                    const firstName = dt.user.firstName;
+                    const lastName = dt.user.lastName;
+                    setAuth({id, email, type, firstName, lastName})
                     navigate("/");
                 } else if (dt.statusCode === 100) {
                     setErrorState(dt.statusMessage)
@@ -52,7 +58,7 @@ export default function Login() {
    
     return (
         <div className="login">
-            <div className="form" onSubmit={handleSubmit(handleSave)}>
+            <div className="form" onSubmit={handleSubmit(handleLogin)}>
                 <h1>Login</h1>
                 <div className="inputs">
                     <form>
@@ -90,7 +96,7 @@ export default function Login() {
                                 Log In
                         </Button>
                         <div style={{ color: "red" }}>
-                            {errorState.message}
+                            {errorState}
                         </div>
                     </form>
                     <Link to="/register">
