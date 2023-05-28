@@ -28,26 +28,32 @@ export default function Login() {
             Password: formValues.password
         }
         
-        await axios.post('https://localhost:7011/api/users/login', data)
-            .then((result) => {
-                const dt = result.data;
-                if (dt.statusCode === 200) {
-                    const email = dt.user.email;
-                    const id = dt.user.id;
-                    const type = dt.user.type;
-                    const firstName = dt.user.firstName;
-                    const lastName = dt.user.lastName;
-                    setAuth({id, email, type, firstName, lastName})
-                    navigate("/");
-                } else if (dt.statusCode === 100) {
-                    setErrorState(dt.statusMessage)
-                }
-            })
-            .catch((error) => {
-                setErrorState(error);
+        try {
+            await axios.post('https://localhost:7011/api/users/login', data)
+                .then((result) => {
+                    const dt = result.data;
+                    if (dt.statusCode === 200) {
+                        const email = dt.user.email;
+                        const id = dt.user.id;
+                        const type = dt.user.type;
+                        const firstName = dt.user.firstName;
+                        const lastName = dt.user.lastName;
+                        setAuth({ id, email, type, firstName, lastName })
+                        navigate("/");
+                    } else if (dt.statusCode === 100) {
+                        setErrorState(dt.statusMessage)
+                    }
+                })
+                .catch((error) => {
+                    setErrorState(error);
                 
-        })
-        
+                })
+        } catch (err) {
+            if (!err?.response) {
+                setErrorState('No Server Response');
+            }
+
+        }
 
         reset();
         

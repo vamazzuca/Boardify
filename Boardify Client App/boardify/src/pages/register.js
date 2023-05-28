@@ -53,23 +53,31 @@ function RegisterForm(props) {
         }
 
         
-        
-        await axios.post('https://localhost:7011/api/users/registration', data)
-            .then((result) => {
-                const dt = result.data;
+        try {
+            await axios.post('https://localhost:7011/api/users/registration', data)
+                .then((result) => {
+                    const dt = result.data;
                 
-                if (dt.statusCode === 200) {
-                    reset();
-                    props.setIsSuccessful(true)
-                } else if (dt.statusCode === 100) {
-                    setErrorState(dt.statusMessage)
-                }
-            })
-            .catch((error) => {
-                setErrorState(error);
-                
-        })
-        
+                    if (dt.statusCode === 200) {
+                        reset();
+                        props.setIsSuccessful(true)
+                    } else if (dt.statusCode === 100) {
+                        setErrorState(dt.statusMessage)
+                    }
+                })
+                .catch((error) => {
+                    if (error?.response) {
+                        setErrorState(error);
+                    } else {
+                        setErrorState('No Server Response');
+                    }
+                })
+        } catch (err) {
+            if (err?.response) {
+                setErrorState('No Server Response');
+            }
+
+        }
         
     }
    

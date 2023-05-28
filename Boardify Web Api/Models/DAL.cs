@@ -107,19 +107,21 @@ namespace Boardify.Models
             cmd.Parameters.AddWithValue("@ID", users.ID);
             cmd.Parameters.AddWithValue("@FirstName", users.FirstName);
             cmd.Parameters.AddWithValue("@LastName", users.LastName);
-            cmd.Parameters.AddWithValue("@Password", users.Password);
             cmd.Parameters.AddWithValue("@Email", users.Email);
+            cmd.Parameters.Add("@ErrorMessage", System.Data.SqlDbType.Char, 200);
+            cmd.Parameters["@ErrorMessage"].Direction = System.Data.ParameterDirection.Output;
             connection.Open();
             int i = cmd.ExecuteNonQuery();
             connection.Close();
-            if(i > 0)
+            string message = (string)cmd.Parameters["@ErrorMessage"].Value;
+            if (i > 0)
             {
                 response.StatusCode = 200;
-                response.StatusMessage = "Updated successfully.";
+                response.StatusMessage = message;
             } else
             {
                 response.StatusCode = 100;
-                response.StatusMessage = "Update Failed. Try Again.";
+                response.StatusMessage = message;
             }
             
             return response;
