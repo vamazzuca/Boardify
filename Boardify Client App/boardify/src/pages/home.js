@@ -5,13 +5,13 @@ import { motion, useAnimation } from "framer-motion";
 import "../styles/home.scss"
 import { easing, fadeInRight, fadeInUp } from "../animations/variants";
 
-export default function Home() {
+export default function Home({about}) {
     return (
         <div className="home">
             <Banner />
             <Featured />
             <Categories />
-            <About />
+            <About about={about} />
         </div>
     )
 }
@@ -251,6 +251,7 @@ function About() {
         }
     }, [controls, inView]);
     return (
+        <div>
         <motion.div
             className="about"
             
@@ -298,6 +299,7 @@ function About() {
                     </p>
                 </motion.div>
             </div>
-        </motion.div>
+            </motion.div>
+            </div>
     )
 }

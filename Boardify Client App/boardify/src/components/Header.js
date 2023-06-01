@@ -4,9 +4,11 @@ import "../styles/header.scss"
 import Button from '@mui/material/Button';
 import useAuth from "../hooks/useAuth";
 
+
 export default function Header() {
 
     const { auth } = useAuth();
+    
     
 
     return (
@@ -25,9 +27,6 @@ export default function Header() {
                 </Link>
                 <Link to="/store">
                     Shop
-                </Link>
-                <Link>
-                    About
                 </Link>
                 <Link to="/cart">
                     <ShoppingBagIcon></ShoppingBagIcon>
