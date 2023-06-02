@@ -5,15 +5,15 @@
     .products{
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        
+        
         width: 100%;
 
         ul {
             padding: 2rem;
             display: flex;
             gap: 2rem;
-            justify-content: center;
+            
             align-items: center;
             list-style: none;
             max-width: 70rem;
@@ -47,9 +47,40 @@
                     margin: 0;
                     
                 }
+                .price {
+                    height: 2.5rem;
+                  }
                 
             }
         }
+    }
+
+    .categories{
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        padding: 2rem 2rem 25rem 5rem;
+        color: #BB86FC;
+        h1{
+            margin: 0;
+        }
+        h2{
+            margin-bottom: 0;
+        }
+        ul{
+            color: #BB86FC;
+            list-style: none;
+            padding: 0;
+            li{
+                &:hover {
+                    cursor: pointer;
+                }
+                width: fit-content;
+                font-size: 20px;
+               
+            }
+        }
+        
     }
     
 }

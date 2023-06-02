@@ -294,6 +294,41 @@ namespace Boardify.Models
             return response;
         }
 
+        public Response viewProduct(Products products, SqlConnection connection)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("sp_viewProduct", connection);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@ID", products.ID);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            Response response = new Response();
+            Products product = new Products();
+            if (dt.Rows.Count > 0)
+            {
+                product.ID = Convert.ToInt32(dt.Rows[0]["ID"]);
+                product.Name = Convert.ToString(dt.Rows[0]["Name"]);
+                product.Brand = Convert.ToString(dt.Rows[0]["Brand"]);
+                product.Manufacturer = Convert.ToString(dt.Rows[0]["Manufacturer"]);
+                product.UnitPrice = Convert.ToDecimal(dt.Rows[0]["UnitPrice"]);
+                product.Discount = Convert.ToDecimal(dt.Rows[0]["Discount"]);
+                product.Color = Convert.ToString(dt.Rows[0]["Color"]);
+                product.ConnectivityTechnology = Convert.ToString(dt.Rows[0]["ConnectivityTechnology"]);
+                product.SwitchType = Convert.ToString(dt.Rows[0]["SwitchType"]);
+                product.KeyNumber = Convert.ToInt32(dt.Rows[0]["KeyNumber"]);
+                product.ImageURL = Convert.ToString(dt.Rows[0]["ImageURL"]);
+                response.StatusCode = 200;
+                response.StatusMessage = "Product exists.";
+                response.product = product;
+            }
+            else
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = "Product does not exist.";
+                response.product = product;
+            }
+            return response;
+        }
+
         public Response productsList(SqlConnection connection)
         {
             Response response = new Response();
@@ -310,6 +345,7 @@ namespace Boardify.Models
                     product.ID = Convert.ToInt32(dt.Rows[i]["ID"]);
                     product.Name = Convert.ToString(dt.Rows[i]["Name"]);
                     product.Brand = Convert.ToString(dt.Rows[i]["Brand"]);
+                    product.Manufacturer = Convert.ToString(dt.Rows[0]["Manufacturer"]);
                     product.UnitPrice = Convert.ToDecimal(dt.Rows[i]["UnitPrice"]);
                     product.Discount = Convert.ToDecimal(dt.Rows[i]["Discount"]);
                     product.Color = Convert.ToString(dt.Rows[i]["Color"]);

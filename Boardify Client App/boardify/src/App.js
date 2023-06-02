@@ -20,9 +20,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login/>}/>
-        <Route path="/store" element={<Store />} />
+        <Route path="/shop" element={<Store />} />
         <Route path="/register" element={<Register />} />
-        <Route path='/store/:name/:productId' element={<Product />} />
+        <Route path='/shop/:name/:productId' element={<Product />} />
         <Route element={<RequireAuth />}>
           <Route path="/profile" element={<Profile />} />
         </Route>

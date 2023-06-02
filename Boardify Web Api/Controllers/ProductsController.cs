@@ -57,6 +57,16 @@ namespace Boardify.Controllers
             return response;
         }
 
+        [HttpPost]
+        [Route("getProduct")]
+        public Response getProduct(Products product)
+        {
+            DAL dal = new DAL();
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("BoardifyCS").ToString());
+            Response response = dal.viewProduct(product, connection);
+            return response;
+        }
+
         [HttpGet]
         [Route("getCart")]
         public Response getCart(Cart cart)

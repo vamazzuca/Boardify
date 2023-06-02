@@ -25,7 +25,7 @@ export default function Header() {
                 <Link to="/">
                     Home
                 </Link>
-                <Link to="/store">
+                <Link to="/shop">
                     Shop
                 </Link>
                 <Link to="/cart">
