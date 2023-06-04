@@ -46,7 +46,7 @@ export default function Product() {
         getProduct(data);
     }, [productID])
 
-    console.log(product)
+    
     return (
         <div className="product">
             <Link to="/shop" className="return">

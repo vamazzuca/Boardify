@@ -345,7 +345,7 @@ namespace Boardify.Models
                     product.ID = Convert.ToInt32(dt.Rows[i]["ID"]);
                     product.Name = Convert.ToString(dt.Rows[i]["Name"]);
                     product.Brand = Convert.ToString(dt.Rows[i]["Brand"]);
-                    product.Manufacturer = Convert.ToString(dt.Rows[0]["Manufacturer"]);
+                    product.Manufacturer = Convert.ToString(dt.Rows[i]["Manufacturer"]);
                     product.UnitPrice = Convert.ToDecimal(dt.Rows[i]["UnitPrice"]);
                     product.Discount = Convert.ToDecimal(dt.Rows[i]["Discount"]);
                     product.Color = Convert.ToString(dt.Rows[i]["Color"]);

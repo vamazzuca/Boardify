@@ -7,6 +7,7 @@ import { string, z } from "zod"
 import axios from "axios"
 import { useState, useEffect } from "react";
 import useAuth from "../hooks/useAuth";
+import { useCallback } from 'react'
 
 export default function Profile() {
 
@@ -24,13 +25,13 @@ export default function Profile() {
     
 
 
-    const getProfile = async () => {
+    const getProfile = useCallback(async () => {
 
         const data = {
             ID: auth.id
         }
         
-        await axios.post('https://localhost:7011/api/users/viewUser', data)
+         await axios.post('https://localhost:7011/api/users/viewUser', data)
             .then((result) => {
                 const dt = result.data;
                 if (dt.statusCode === 200) {
@@ -54,11 +55,9 @@ export default function Profile() {
                 
             })
 
-    }
+    }, [auth.id, setAuth])
 
-    useEffect(() => {
-        getProfile();
-    })
+    
     
     const handleUpdate = async (formValues) => {
      
@@ -89,6 +88,9 @@ export default function Profile() {
         
     }
 
+    useEffect(() => {
+        getProfile();
+    }, [getProfile])
    
     
     return (

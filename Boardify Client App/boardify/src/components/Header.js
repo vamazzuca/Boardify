@@ -22,6 +22,9 @@ export default function Header() {
                 </Link>
             </div>
             <div className="right">
+                <Link to="/admin-panel">
+                    Admin Panel
+                </Link>
                 <Link to="/">
                     Home
                 </Link>

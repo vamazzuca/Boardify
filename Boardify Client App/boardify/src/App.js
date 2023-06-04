@@ -8,7 +8,8 @@ import Register from "./pages/register";
 import Profile from "./pages/profile";
 import RequireAuth from "./components/requireAuth";
 import Product from "./pages/product";
-
+import AdminPanel from "./pages/adminPanel";
+import AddProduct from "./pages/addProduct";
 
 function App() {
   
@@ -25,7 +26,10 @@ function App() {
         <Route path='/shop/:name/:productId' element={<Product />} />
         <Route element={<RequireAuth />}>
           <Route path="/profile" element={<Profile />} />
+          
         </Route>
+        <Route path="/admin-panel" element={<AdminPanel />} />
+        <Route path="/admin-panel/add-product" element={<AddProduct/>}/>
       </Routes>
       <Footer/>
     </div>
