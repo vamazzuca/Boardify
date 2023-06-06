@@ -110,19 +110,23 @@ export default function AdminPanel() {
                                         <td>{prod.switchType}</td>
                                         <td>{prod.keyNumber}</td>
                                         <td>
-                                        <Button style={{
-                                            backgroundColor: "#BB86FC",
-                                            fontSize: "14px",
-                                            color: "#212121",
-                                            fontWeight: "bold"
-                                            }} variant="contained">Edit</Button>
+                                            <Link to={`/admin-panel/edit-product/${prod.id}`}>
+                                                <Button 
+                                                    style={{
+                                                        backgroundColor: "#BB86FC",
+                                                        fontSize: "14px",
+                                                        color: "#212121",
+                                                        fontWeight: "bold"
+                                                        }} variant="contained">Edit</Button>
+                                                </Link>
                                         </td>
                                         <td>
-                                            <Button onClick={() => handleDelete(prod.id)} style={{
-                                            backgroundColor: "#FF0000",
-                                            fontSize: "14px",
-                                            color: "#212121",
-                                            fontWeight: "bold"
+                                            <Button onClick={() => handleDelete(prod.id)}
+                                                style={{
+                                                    backgroundColor: "#FF0000",
+                                                    fontSize: "14px",
+                                                    color: "#212121",
+                                                    fontWeight: "bold"
                                             }} variant="contained">Delete</Button>
                                         </td>
                                     </tr>
