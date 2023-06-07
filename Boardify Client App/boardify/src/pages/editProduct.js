@@ -6,9 +6,9 @@ import { Image } from 'cloudinary-react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useForm } from 'react-hook-form';
-import { string, z, number } from "zod"
-import { useParams } from 'react-router-dom'
-import { zodResolver } from "@hookform/resolvers/zod"
+import { string, z } from "zod";
+import { useParams } from 'react-router-dom';
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export default function EditProduct() {
 
@@ -62,8 +62,8 @@ export default function EditProduct() {
                     navigate("/admin-panel");
                 }
                  else if (dt.statusCode === 100) {
-                    setErrorState(dt.statusMessage)
-                    console.log("Test")
+                    setErrorState(dt.statusMessage);
+                    console.log("Test");
                 }
             })
             .catch((error) => {

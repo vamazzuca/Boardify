@@ -33,15 +33,15 @@ export default function AdminPanel() {
     }
 
     const handleDelete = async (productID) => {
-        const data = {
-            ID: productID
-        }
+       
+        
 
-        await axios.delete('https://localhost:7011/api/admin/deleteProducts', data)
+        await axios.delete('https://localhost:7011/api/admin/deleteProducts', {data: {id: productID}})
             .then((result) => {
                 const dt = result.data;
                  if (dt.statusCode === 100) {
-                    console.log(dt.statusMessage)
+                     console.log(dt.statusMessage)
+                     console.log("test")
                 }
             })
             .catch((error) => {
@@ -56,7 +56,7 @@ export default function AdminPanel() {
 
     useEffect(() => {
         getProducts();
-    }, [])
+    }, [products])
 
     
    

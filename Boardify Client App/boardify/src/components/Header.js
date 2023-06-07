@@ -23,7 +23,7 @@ export default function Header() {
             </div>
             <div className="right">
                 <Link to="/admin-panel">
-                    Admin Panel
+                    {auth.email && auth.type === "Admin" ? "Admin Panel" : null}
                 </Link>
                 <Link to="/">
                     Home

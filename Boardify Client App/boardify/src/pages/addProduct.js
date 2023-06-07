@@ -6,7 +6,7 @@ import { Image } from 'cloudinary-react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useForm } from 'react-hook-form';
-import { string, z, number } from "zod"
+import { string, z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 
 export default function AddProduct() {
@@ -15,7 +15,7 @@ export default function AddProduct() {
         name: string(),
         brand: string(),
         manufacturer: string(),
-        unitPrice: number(),
+        unitPrice: string(),
         color: string(),
         switchType: string(),
         connectivityTechnology: string(),
@@ -36,7 +36,7 @@ export default function AddProduct() {
             name: formValues.name,
             brand: formValues.brand,
             manufacturer: formValues.manufacturer,
-            unitPrice: formValues.unitPrice,
+            unitPrice: parseFloat(formValues.unitPrice),
             color: formValues.color,
             switchType: formValues.switchType,
             connectivityTechnology: formValues.connectivityTechnology,
