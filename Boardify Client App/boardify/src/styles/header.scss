@@ -51,6 +51,26 @@
         .MuiButton-outlined {
             border-color: #BB86FC !important;
         }
+        .cart{
+            position: relative;
+            p {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                color: #222222;
+                margin: 0;
+                bottom: -5px;
+                right: -10px;
+                background-color: #2ed6ac;
+                border-radius: 50%;
+                min-width: 1rem;
+                min-height: 1rem;
+                font-size: 0.8rem;
+                font-weight: bold;
+                padding: 0.1rem;
+            }
+        }
     }
 
     .left {

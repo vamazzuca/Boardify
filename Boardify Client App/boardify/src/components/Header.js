@@ -3,12 +3,13 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import "../styles/header.scss"
 import Button from '@mui/material/Button';
 import useAuth from "../hooks/useAuth";
+import { useShoppingCart } from "../context/cartContext";
 
 
 export default function Header() {
 
     const { auth } = useAuth();
-    
+    const { cartQuantity } = useShoppingCart();
     
 
     return (
@@ -31,8 +32,10 @@ export default function Header() {
                 <Link to="/shop">
                     Shop
                 </Link>
-                <Link to="/cart">
-                    <ShoppingBagIcon></ShoppingBagIcon>
+                <Link to="/cart" className="cart">
+                    <ShoppingBagIcon/>
+                    {cartQuantity > 0 && cartQuantity < 100 && <p>{cartQuantity}</p>}
+                    {cartQuantity > 99 && <p>{99}+</p>}
                 </Link>
                 {auth.email ? <Logout /> : <Login />}
             </div>

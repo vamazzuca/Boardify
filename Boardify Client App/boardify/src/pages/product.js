@@ -5,17 +5,19 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Image } from 'cloudinary-react';
 import Button from '@mui/material/Button';
+import { useShoppingCart } from "../context/cartContext";
 
 export default function Product() {
     const params = useParams();
     const productID = params.productId;
     const [product, setProduct] = useState({});
 
-    
+    const { increaseCartQuantity } = useShoppingCart();
 
+    
+   
     const getProduct= async (data) => {
 
-        
         
         await axios.post('https://localhost:7011/api/products/getProduct', data)
             .then((result) => {
@@ -83,6 +85,7 @@ export default function Product() {
                                     width: "100%"
                                     }}
                             variant="contained"
+                            onClick={() => increaseCartQuantity(productID)}
                             type="submit">
                                 Add to Cart
                         </Button>

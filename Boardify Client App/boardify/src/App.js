@@ -12,31 +12,34 @@ import AdminPanel from "./pages/adminPanel";
 import AddProduct from "./pages/addProduct";
 import EditProduct from "./pages/editProduct";
 import Error from "./pages/error";
+import { CartProvider } from "./context/cartContext";
+import Cart from "./pages/cart";
 
 function App() {
   
-
-  
   return (
     <div className="App">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/shop" element={<Store />} />
-        <Route path="/register" element={<Register />} />
-        <Route path='/shop/:name/:productId' element={<Product />} />
-        <Route element={<RequireAuth allowedRoles={["user", "admin"]}/>}>
-          <Route path="/profile" element={<Profile />} />
-        </Route>
-        <Route element={<RequireAuth allowedRoles={["admin"]}/>}>
-          <Route path="/admin-panel" element={<AdminPanel />} />
-          <Route path="/admin-panel/add-product" element={<AddProduct />} />
-          <Route path="/admin-panel/edit-product/:productId" element={<EditProduct/>}/> 
-        </Route>
-        <Route path="*" element={<Error/>}></Route>
-      </Routes>
-      <Footer/>
+      <CartProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/shop" element={<Store />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path='/shop/:name/:productId' element={<Product />} />
+          <Route element={<RequireAuth allowedRoles={["user", "admin"]}/>}>
+            <Route path="/profile" element={<Profile />} />
+          </Route>
+          <Route element={<RequireAuth allowedRoles={["admin"]}/>}>
+            <Route path="/admin-panel" element={<AdminPanel />} />
+            <Route path="/admin-panel/add-product" element={<AddProduct />} />
+            <Route path="/admin-panel/edit-product/:productId" element={<EditProduct/>}/> 
+          </Route>
+          <Route path="*" element={<Error/>}></Route>
+        </Routes>
+        <Footer />
+      </CartProvider>
     </div>
   );
 }
