@@ -6,7 +6,7 @@ import axios from "axios"
 import { useState, useEffect} from "react";
 
 export default function CartItem({ cartItem }) {
-  const { increaseCartQuantity, decreaseCartQuantity, removeFromCart, getItemQuantity } = useShoppingCart();
+  const { increaseCartQuantity, decreaseCartQuantity, removeFromCart} = useShoppingCart();
   const [product, setProduct ] = useState({});
 
   
@@ -47,16 +47,15 @@ useEffect(() => {
       <li>
         
         <Link to={`/shop/${product?.name}/${cartItem.id}`}>
-          <Image style={{height: '30rem', width: '40rem'} } cloudName="daor4etop" publicId={product?.imageURL} />
+          <Image style={{height: '5rem', width: '8rem'} } cloudName="daor4etop" publicId={product?.imageURL} />
         </Link>
       
         <div className="description">
           <Link to={`/shop/${cartItem.name}/${cartItem.id}`}>
             <p className="name">{product?.name}</p>
           </Link>
-          <p className="price">{product?.unitPrice}</p>
-          <p className="price">{getItemQuantity(cartItem.id)}</p>
-        
+          <p className="price">{product?.unitPrice} CAD</p>
+          
           <div className="delete" onClick={() => removeFromCart(cartItem.id)}>
             <DeleteIcon></DeleteIcon>
             <p>Remove</p>

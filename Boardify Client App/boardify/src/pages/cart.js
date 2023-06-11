@@ -1,3 +1,4 @@
+import "../styles/cart.scss"
 import { useShoppingCart } from "../context/cartContext";
 import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
@@ -17,12 +18,24 @@ export default function Cart() {
     }
 
     return (
-        <div className="cart">
+        <div className="shopping-cart">
             {cartQuantity < 1 && (
                 <div className="empty-cart">
                     <p>Your cart is empty</p>
-                    <p>Visit our shop to find the best in Mechanical Keyboards!</p>
-                    <Link to="/shop">Shop</Link>
+                    <p>Find items in the shop!</p>
+                    <Link to="/shop">
+                    <Button
+                            style={{
+                                    backgroundColor: "#BB86FC",
+                                    fontSize: "14px",
+                                    color: "#212121",
+                                    fontWeight: "bold"
+                                    }}
+                            variant="contained"
+                            type="submit">
+                                Shop
+                        </Button>
+                    </Link>
                 </div>
             )}
             
@@ -49,11 +62,17 @@ export default function Cart() {
                             <p>Total</p>
                             <div>CAD {calcTotal()}</div>
                         </div>
-                        <Button style={{
-                                fontSize: "14px",
-                                color: "#BB86FC",
-                                fontWeight: "bold"
-                                }} variant="outlined">ORDER</Button>
+                        <Button
+                            style={{
+                                    backgroundColor: "#BB86FC",
+                                    fontSize: "14px",
+                                    color: "#212121",
+                                    fontWeight: "bold"
+                                    }}
+                            variant="contained"
+                            type="submit">
+                                ORDER
+                        </Button>
                     </div>
                 </ul>
             )}
