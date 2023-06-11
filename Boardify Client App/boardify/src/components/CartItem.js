@@ -12,7 +12,7 @@ export default function CartItem({ cartItem }) {
   
   const getProduct= async (data) => {
 
-    console.log(data)
+    
     await axios.post('https://localhost:7011/api/products/getProduct', data)
         .then((result) => {
             const dt = result.data;

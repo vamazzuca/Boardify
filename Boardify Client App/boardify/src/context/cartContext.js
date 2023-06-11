@@ -1,5 +1,6 @@
 import { createContext, useContext} from "react";
 import { useState } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const cartContext = createContext({})
 
@@ -9,7 +10,7 @@ export function useShoppingCart() {
 }
 
 export const CartProvider = ({ children }) => {
-    const [clientCart, setClientCart] = useState([]);
+    const [clientCart, setClientCart] = useLocalStorage("shopping-cart", []);
 
     
 

@@ -3,20 +3,52 @@ import { useShoppingCart } from "../context/cartContext";
 import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
 import CartItem from "../components/CartItem";
+import axios from "axios"
+import { useState, useEffect } from "react";
 
 
 export default function Cart() {
     const { cartQuantity, clientCart } = useShoppingCart();
+    const [products, setProducts] = useState([]);
+    
 
-    const products = []
+    
+    const total = clientCart.reduce((total, cartItem) => {
+        const item = products.find(i => i.id === parseInt(cartItem.id))
+        return(total + (item?.unitPrice || 0) * cartItem.quantity)
+    }, 0)
 
-    function calcTotal() {
-        clientCart.reduce((total, cartItem) => {
-            const item = products.find(i => i.id === cartItem.id)
-            return total + (item?.price || 0) * cartItem.quantity
-        }, 0)
+    
+    const getProducts = async () => {
+
+        
+        await axios.get('https://localhost:7011/api/products/getProducts')
+            .then((result) => {
+                const dt = result.data;
+                if (dt.statusCode === 200) {
+                    setProducts(dt.listproducts)
+                    
+                }
+                 else if (dt.statusCode === 100) {
+                    console.log(dt.statusMessage)
+                }
+            })
+            .catch((error) => {
+                if (error?.response) {
+                    console.log(error);
+                } else {
+                    console.log('No Server Response');
+                }
+                
+            })
+
     }
 
+    useEffect(() => {
+        getProducts();
+    }, [])
+
+    
     return (
         <div className="shopping-cart">
             {cartQuantity < 1 && (
@@ -52,7 +84,7 @@ export default function Cart() {
 
                         <div className="sub-total">
                             <p>Sub-total</p>
-                            <div>{calcTotal()}</div>
+                            <div>{total}</div>
                         </div>
                         <div className="shipping">
                             <p>Shipping</p>
@@ -60,7 +92,7 @@ export default function Cart() {
                         </div>
                         <div className="total">
                             <p>Total</p>
-                            <div>CAD {calcTotal()}</div>
+                            <div>CAD {total}</div>
                         </div>
                         <Button
                             style={{
