@@ -133,10 +133,7 @@ namespace Boardify.Models
             SqlCommand cmd = new SqlCommand("sp_addToCart", connection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@UserID", cart.UserID);
-            cmd.Parameters.AddWithValue("@UnitPrice", cart.UnitPrice);
-            cmd.Parameters.AddWithValue("@Discount", cart.Discount);
             cmd.Parameters.AddWithValue("@Quantity", cart.Quantity);
-            cmd.Parameters.AddWithValue("@TotalPrice", cart.TotalPrice);
             cmd.Parameters.AddWithValue("@ProductID", cart.ProductID);
             connection.Open();
             int i = cmd.ExecuteNonQuery();
@@ -186,7 +183,6 @@ namespace Boardify.Models
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@ID", cart.ID);
             cmd.Parameters.AddWithValue("@Quantity", cart.Quantity);
-            cmd.Parameters.AddWithValue("@TotalPrice", cart.TotalPrice);
             connection.Open();
             int i = cmd.ExecuteNonQuery();
             connection.Close();
@@ -383,57 +379,42 @@ namespace Boardify.Models
         {
             Response response = new Response();
             SqlDataAdapter da = new SqlDataAdapter("sp_getCart", connection);
-            da.SelectCommand.Parameters.AddWithValue("@CartID", cart.ID);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@UserID", cart.UserID);
             DataTable dt = new DataTable();
             da.Fill(dt);
             List<Cart> listCart = new List<Cart>();
-            List<Products> listProducts = new List<Products>();
 
             if (dt.Rows.Count > 0)
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     Cart cartItem = new Cart();
-                    Products product = new Products();
-                    cartItem.ID = Convert.ToInt32(dt.Rows[i]["Cart.ID"]);
+                    cartItem.ID = Convert.ToInt32(dt.Rows[i]["ID"]);
                     cartItem.ProductID = Convert.ToInt32(dt.Rows[i]["ProductID"]);
                     cartItem.UserID = Convert.ToInt32(dt.Rows[i]["UserID"]);
-                    cartItem.UnitPrice = Convert.ToDecimal(dt.Rows[i]["UnitPrice"]);
-                    cartItem.Quantity = Convert.ToInt32(dt.Rows[i]["Quantity"]);
-                    cartItem.TotalPrice = Convert.ToDecimal(dt.Rows[i]["TotalPrice"]);
-                    product.ID = Convert.ToInt32(dt.Rows[i]["Products.ID"]);
-                    product.Name = Convert.ToString(dt.Rows[i]["Name"]);
-                    product.Brand = Convert.ToString(dt.Rows[i]["Brand"]);
-                    product.UnitPrice = Convert.ToDecimal(dt.Rows[i]["UnitPrice"]);
-                    product.Discount = Convert.ToDecimal(dt.Rows[i]["Discount"]);
-                    product.Color = Convert.ToString(dt.Rows[i]["Color"]);
-                    product.ConnectivityTechnology = Convert.ToString(dt.Rows[i]["ConnectivityTechnology"]);
-                    product.SwitchType = Convert.ToString(dt.Rows[i]["SwitchType"]);
-                    product.KeyNumber = Convert.ToInt32(dt.Rows[i]["KeyNumber"]);
-                    product.ImageURL = Convert.ToString(dt.Rows[i]["ImageURL"]);
-                    listProducts.Add(product);
+                    cartItem.Quantity = Convert.ToInt32(dt.Rows[i]["Quantity"]);                  
+                    
+                   
                     listCart.Add(cartItem);
                 }
-                if (listProducts.Count > 0 & listCart.Count > 0)
+                if (listCart.Count > 0)
                 {
                     response.StatusCode = 200;
-                    response.StatusMessage = "Product Data Found";
-                    response.listproducts = listProducts;
+                    response.StatusMessage = "Cart Data Found";
                     response.listCart = listCart;
                 }
                 else
                 {
                     response.StatusCode = 100;
-                    response.StatusMessage = "Product Data Not Found";
-                    response.listproducts = null;
+                    response.StatusMessage = "Cart Data Not Found";
                     response.listCart = null;
                 }
             }
             else
             {
                 response.StatusCode = 100;
-                response.StatusMessage = "Product Data Not Found";
-                response.listproducts = null;
+                response.StatusMessage = "Cart Data Not Found";
                 response.listCart = null;
             }
 

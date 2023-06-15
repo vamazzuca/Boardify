@@ -36,38 +36,38 @@ export default function CartItem({ cartItem }) {
 
 useEffect(() => {
     const data = {
-        ID: cartItem.id
+        ID: cartItem.productID
     }
 
     getProduct(data);
-}, [cartItem.id])
+}, [cartItem.productID])
 
  
   return (
       <li>
         
-        <Link to={`/shop/${product?.name}/${cartItem.id}`}>
+        <Link to={`/shop/${product?.name}/${cartItem.productID}`}>
           <Image style={{height: '5rem', width: '8rem'} } cloudName="daor4etop" publicId={product?.imageURL} />
         </Link>
       
         <div className="description">
-          <Link to={`/shop/${cartItem.name}/${cartItem.id}`}>
+          <Link to={`/shop/${cartItem.name}/${cartItem.productID}`}>
             <p className="name">{product?.name}</p>
           </Link>
           <p className="price">{product?.unitPrice} CAD</p>
           
-          <div className="delete" onClick={() => removeFromCart(cartItem.id)}>
+          <div className="delete" onClick={() => removeFromCart(cartItem.productID)}>
             <DeleteIcon></DeleteIcon>
             <p>Remove</p>
           </div>
         </div>
       
         <div className="add-and-remove">
-          <button onClick={() => decreaseCartQuantity(cartItem.id)}>
+          <button onClick={() => decreaseCartQuantity(cartItem.productID)}>
             −
           </button>
           <p>{cartItem.quantity}</p>
-          <button onClick={() => increaseCartQuantity(cartItem.id)}>
+          <button onClick={() => increaseCartQuantity(cartItem.productID)}>
             +
           </button>
         </div>

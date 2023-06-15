@@ -67,7 +67,7 @@ namespace Boardify.Controllers
             return response;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("getCart")]
         public Response getCart(Cart cart)
         {

@@ -35,7 +35,7 @@ export default function Profile() {
             .then((result) => {
                 const dt = result.data;
                 if (dt.statusCode === 200) {
-                    const email = dt.user.email;
+                        const email = dt.user.email;
                         const id = dt.user.id;
                         const type = dt.user.type;
                         const firstName = dt.user.firstName;

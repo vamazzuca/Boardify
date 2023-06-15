@@ -5,16 +5,32 @@ import Button from '@mui/material/Button';
 import CartItem from "../components/CartItem";
 import axios from "axios"
 import { useState, useEffect } from "react";
+import useAuth from "../hooks/useAuth";
+
 
 
 export default function Cart() {
-    const { cartQuantity, clientCart } = useShoppingCart();
+    const { cartClientQuantity, clientCart, serverCart, cartServerQuantity } = useShoppingCart();
+    const [cartQuantity, setCartQuantity] = useState([]);
     const [products, setProducts] = useState([]);
+    const [cart, setCart] = useState([]);
+    const { auth } = useAuth();
+  
+    
+    const createCart = () => {
+        if (auth.email) {
+            setCartQuantity(cartServerQuantity)
+            setCart(serverCart)
+        } else {
+            setCartQuantity(cartClientQuantity)
+            setCart(clientCart)
+        }
+    }
+    
     
 
-    
-    const total = clientCart.reduce((total, cartItem) => {
-        const item = products.find(i => i.id === parseInt(cartItem.id))
+    const total = cart.reduce((total, cartItem) => {
+        const item = products.find(i => i.id === parseInt(cartItem.productID))
         return(total + (item?.unitPrice || 0) * cartItem.quantity)
     }, 0)
 
@@ -46,7 +62,9 @@ export default function Cart() {
 
     useEffect(() => {
         getProducts();
-    }, [])
+        createCart();
+        
+    })
 
     
     return (
@@ -75,7 +93,7 @@ export default function Cart() {
             {cartQuantity > 0 && (
                 <ul>
                     <h1>My cart ({cartQuantity} items)</h1>
-                    {clientCart.map((cartItem, index) => (
+                    {cart.map((cartItem, index) => (
                         <CartItem key={index} cartItem={cartItem}/>
                     ))}
                 
