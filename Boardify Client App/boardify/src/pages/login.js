@@ -8,6 +8,7 @@ import { string, z } from "zod"
 import axios from "axios"
 import { useState } from "react";
 import useAuth from "../hooks/useAuth";
+import { useShoppingCart } from "../context/cartContext";
 
 
 export default function Login() {
@@ -20,6 +21,9 @@ export default function Login() {
     const navigate = useNavigate();
     const [errorState, setErrorState] = useState("");
     const { setAuth } = useAuth();
+    const { mergeCart } = useShoppingCart();
+
+    
 
     const handleLogin = async (formValues) => {
 
@@ -39,6 +43,7 @@ export default function Login() {
                         const firstName = dt.user.firstName;
                         const lastName = dt.user.lastName;
                         setAuth({ id, email, type, firstName, lastName })
+                        mergeCart(id);
                         navigate("/");
                     } else if (dt.statusCode === 100) {
                         setErrorState(dt.statusMessage)

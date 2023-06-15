@@ -51,7 +51,7 @@ export const CartProvider = ({ children }) => {
             quantity: quantity
         }
 
-        console.log(data)
+        
         await axios.put('https://localhost:7011/api/products/updateFromCart', data)
             .then((result) => {
                 const dt = result.data;
@@ -138,6 +138,25 @@ export const CartProvider = ({ children }) => {
     }, [auth.email, auth.id, serverCart])
 
     
+    const mergeCart = (userID) => {
+        clientCart.forEach((clientItem) => {
+
+            if (serverCart.find(serverItem => parseInt(clientItem.productID) === serverItem.productID) == null) {
+                //Add Cart Item
+                
+                addCart(userID, parseInt(clientItem.productID), parseInt(clientItem.quantity));
+            } else {
+                const item  = serverCart.find(serverItem => parseInt(clientItem.productID) === serverItem.productID)
+                        //update cart item
+                    if (item.productID === parseInt(clientItem.productID)) {
+                        
+                        updateCart(item.id, item.quantity + parseInt(clientItem.quantity))  
+                    }
+            }
+        })
+
+        setClientCart([]);
+    }
     
     const getItemQuantity = (productID) => {
         if (auth.email) {
@@ -242,7 +261,18 @@ export const CartProvider = ({ children }) => {
    
     return (
 
-    <cartContext.Provider value={{getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart, clientCart, serverCart, cartClientQuantity, cartServerQuantity}}>
+        <cartContext.Provider value={{
+            getItemQuantity,
+            increaseCartQuantity,
+            decreaseCartQuantity,
+            removeFromCart,
+            clientCart,
+            setClientCart,
+            serverCart,
+            cartClientQuantity,
+            cartServerQuantity,
+            mergeCart
+        }}>
         {children}
     </cartContext.Provider>
     )
