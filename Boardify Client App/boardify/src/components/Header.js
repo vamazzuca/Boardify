@@ -19,6 +19,11 @@ export default function Header() {
         }
     }
 
+    const handleMenu = (btn) => {
+        btn.target.classList.toggle("active");
+        document.querySelector(".sandwich").classList.toggle("active");
+      };
+
     return (
         <div className="header">
             <div className="left">
@@ -33,10 +38,10 @@ export default function Header() {
                 <Link to="/admin-panel">
                     {auth.email && auth.type === "admin" ? "Admin Panel" : null}
                 </Link>
-                <Link to="/">
+                <Link to="/" className="shop">
                     Home
                 </Link>
-                <Link to="/shop">
+                <Link to="/shop" className="shop">
                     Shop
                 </Link>
                 <Link to="/cart" className="cart">
@@ -45,6 +50,32 @@ export default function Header() {
                     {cartQuantity() > 99 && <p>{99}+</p>}
                 </Link>
                 {auth.email ? <Logout /> : <Login />}
+            </div>
+
+            <button
+                className="sandwich-button"
+                onClick={(e) => handleMenu(e)}
+            ></button>
+            <div className="sandwich">
+                <div className="menu">
+                    <Link to="/admin-panel">
+                        {auth.email && auth.type === "admin" ? "Admin Panel" : null}
+                    </Link>
+                    <Link to="/" className="shop">
+                        Home
+                    </Link>
+                    <Link to="/shop" className="shop">
+                        Shop
+                    </Link>
+                    <Link to="/cart" className="cart">
+                        <ShoppingBagIcon/>
+                        {cartQuantity() > 0 && cartQuantity() < 100 && <p>{cartQuantity()}</p>}
+                        {cartQuantity() > 99 && <p>{99}+</p>}
+                    </Link>
+                    {auth.email ? <Logout /> : <Login />}
+
+                </div>
+
             </div>
         </div>
     )

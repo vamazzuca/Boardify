@@ -12,7 +12,7 @@ export function useShoppingCart() {
 }
 
 export const CartProvider = ({ children }) => {
-    const [clientCart, setClientCart] = useState([]);
+    const [clientCart, setClientCart] = useLocalStorage("shopping-cart", []);
     const [serverCart, setServerCart] = useState([]);
     const { auth } = useAuth();
 

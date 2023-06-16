@@ -13,7 +13,7 @@
             padding: 2rem;
             display: flex;
             gap: 2rem;
-            
+            justify-content: none;
             align-items: center;
             list-style: none;
             max-width: 70rem;
@@ -84,3 +84,27 @@
     }
     
 }
+
+
+@media only screen and (max-width: 850px) {
+    .store {
+        display: flex;
+        flex-direction: column;
+        .categories {
+            padding: 2rem 2rem 2rem 5rem;
+        }
+        .products{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+            ul{
+               
+           
+            justify-content: center;
+            
+            }
+            
+        }
+    }
+  }
