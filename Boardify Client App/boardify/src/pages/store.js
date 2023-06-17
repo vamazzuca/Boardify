@@ -1,7 +1,7 @@
 import "../styles/store.scss"
 import axios from "axios"
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect, useCallback } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Image } from 'cloudinary-react';
 
 
@@ -10,6 +10,15 @@ export default function Store() {
     const [products, setProducts] = useState([]);
     const [category, setCategory] = useState("all");
 
+    const location = useLocation()
+    
+
+    const checkCategory = useCallback(() => {
+        if (location.state) {
+            const { from } = location.state
+            setCategory(from)
+        }
+    }, [location.state])
 
     const changeCategory = (category) => {
         setCategory(category)
@@ -42,7 +51,8 @@ export default function Store() {
 
     useEffect(() => {
         getProducts();
-    }, [])
+        checkCategory();
+    }, [checkCategory])
 
    
    

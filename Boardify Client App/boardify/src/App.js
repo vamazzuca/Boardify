@@ -14,26 +14,19 @@ import EditProduct from "./pages/editProduct";
 import Error from "./pages/error";
 import { CartProvider } from "./context/cartContext";
 import Cart from "./pages/cart";
-import { useEffect } from "react";
-import { useLocation} from "react-router-dom";
+import ScrollToTop from "./hooks/scrollToTop";
 
 function App() {
   
-  const ScrollToTop = () => {
-    const { pathname } = useLocation();
-
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [pathname]);
-
-    return null;
-  };
+  
 
   return (
     <div className="App">
-      <CartProvider>
       <ScrollToTop/>
+      <CartProvider>
+      
         <Header />
+        
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Login/>}/>

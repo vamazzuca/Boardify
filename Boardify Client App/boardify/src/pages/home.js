@@ -96,11 +96,11 @@ function Featured() {
                         scale: 1.1,
                         transition: { type: "easeInOut", duration: 0.1 },
                     }}>
-                    <Link to="/shop">
-                        <img src={require("../images/blackshark.png")} alt="" />
+                    <Link to="/shop/NexusKlick/3">
+                        <img src={require("../images/NexusKlick.jpg")} alt="" />
                         
                     </Link>
-                    <p>Black Shark</p>
+                    <p>NexusKlick</p>
                 </motion.div>
 
                 <motion.div
@@ -110,11 +110,11 @@ function Featured() {
                         scale: 1.1,
                         transition: { type: "easeInOut", duration: 0.1 },
                     }}>
-                    <Link to="/shop">
-                        <img src={require("../images/corsairstrafe.png")} alt="" />
+                    <Link to="/shop/VortexGlide/4">
+                        <img src={require("../images/VortexGlide.jpg")} alt="" />
                         
                     </Link>
-                    <p>Corsair Strafe</p>
+                    <p>VortexGlide</p>
                 </motion.div>
 
                 <motion.div
@@ -124,11 +124,11 @@ function Featured() {
                         scale: 1.1,
                         transition: { type: "easeInOut", duration: 0.1 },
                     }}>
-                    <Link to="/shop">
-                        <img src={require("../images/reddragon.png")} alt="" />
+                    <Link to="/shop/StellarShift/6">
+                        <img src={require("../images/StellarShift.jpg")} alt="" />
                         
                     </Link>
-                    <p>Red Dragon</p>
+                    <p>StellarShift</p>
                 </motion.div>
 
                 <motion.div
@@ -138,11 +138,11 @@ function Featured() {
                         scale: 1.1,
                         transition: { type: "easeInOut", duration: 0.1 },
                     }}>
-                    <Link to="/shop">
-                        <img src={require("../images/steelseriesapexpro.png")} alt="" />
+                    <Link to="/shop/AuroraKeys/7">
+                        <img src={require("../images/AuroraKeys.avif")} alt="" />
                         
                     </Link>
-                    <p>Steel Series Apex Pro</p>
+                    <p>AuroraKeys</p>
                 </motion.div>
             </div>
         </motion.div>
@@ -186,8 +186,8 @@ function Categories() {
                         scale: 1.1,
                         transition: { type: "easeInOut", duration: 0.1 },
                     }}>
-                    <Link to="/shop">
-                        <img className="switch" src={require("../images/red.webp")} alt="" />
+                    <Link to="/shop" state={{ from: "red" }}>
+                        <img className="switch" src={require("../images/red.jpg")} alt="" />
                         
                     </Link>
                     <p>Red Switch</p>
@@ -200,7 +200,7 @@ function Categories() {
                         scale: 1.1,
                         transition: { type: "easeInOut", duration: 0.1 },
                     }}>
-                    <Link to="/shop">
+                    <Link to="/shop" state={{ from: "blue" }}>
                         <img className="switch" src={require("../images/blue.jpg")} alt="" />
                         
                     </Link>
@@ -214,7 +214,7 @@ function Categories() {
                         scale: 1.1,
                         transition: { type: "easeInOut", duration: 0.1 },
                     }}>
-                    <Link to="/shop">
+                    <Link to="/shop" state={{ from: "black" }}>
                         <img className="switch" src={require("../images/black.jpg")} alt="" />
                         
                     </Link>
@@ -228,8 +228,8 @@ function Categories() {
                         scale: 1.1,
                         transition: { type: "easeInOut", duration: 0.1 },
                     }}>
-                    <Link to="/shop">
-                        <img className="switch" src={require("../images/brown.png")} alt="" />
+                    <Link to="/shop" state={{ from: "brown" }}>
+                        <img className="switch" src={require("../images/brown.jpg")} alt="" />
                         
                     </Link>
                     <p>Brown Switch</p>
@@ -270,7 +270,7 @@ function About() {
             <motion.h1 variants={fadeInUp}>About</motion.h1>
             <div className="about-info">
                 <motion.div variants={fadeInUp} className="info-para">
-                    <img src={require("../images/keyboard.jpg")} alt="" />
+                    <img src={require("../images/keyboard.webp")} alt="" />
                     <h2>High Quality</h2>
                     <p>
                         Mechanical keyboards are a type of computer keyboard that uses individual mechanical switches for each key.
@@ -290,7 +290,7 @@ function About() {
                     </p>
                 </motion.div>
                 <motion.div variants={fadeInUp} className="info-para">
-                    <img src={require("../images/gaming.webp")} alt="" />
+                    <img src={require("../images/gaming.jpeg")} alt="" />
                     <h2>Made for Gaming</h2>
                     <p>
                         Mechanical keyboards are popular among gamers due to their faster response times and improved accuracy.
