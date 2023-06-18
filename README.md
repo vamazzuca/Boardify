@@ -7,7 +7,8 @@
  • Admin accounts can add, edit and delete products in order to keep the store up to date.   
  • Frontend built with React, SASS, and Material UI for icons and button styling.   
  • REST API Backend built with C# and .NET using ASP.NET Core.   
- • Used MySQL database for storing product, cart and profile information.  
+ • Used MySQL database for storing product, cart and profile information.   
+ • Cloudinary for image hosting.
 
  Tech Stack  
  • React  
@@ -15,7 +16,8 @@
  • SASS  
  • C#  
  • .NET  
- • MySQL  
+ • MySQL 
+ • Cloudinary  
 
 Video Demo
 
