@@ -1,7 +1,7 @@
 # Boardify
  E-commerce site for Mechanical keyboards.
 
- Description
+ Description  
  • A fullstack e-Commerce site for selling mechanical keyboards.   
  • Users can create a profile account and browse the store to shop for their favorite products.   
  • Admin accounts can add, edit and delete products in order to keep the store up to date.   
