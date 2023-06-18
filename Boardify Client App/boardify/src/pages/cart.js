@@ -31,7 +31,8 @@ export default function Cart() {
 
     const total = cart.reduce((total, cartItem) => {
         const item = products.find(i => i.id === parseInt(cartItem.productID))
-        return(total + (item?.unitPrice || 0) * cartItem.quantity)
+        const num = total + (item?.unitPrice || 0) * cartItem.quantity
+        return(Math.round(num *100) / 100)
     }, 0)
 
     

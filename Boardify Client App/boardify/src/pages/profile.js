@@ -71,8 +71,9 @@ export default function Profile() {
         await axios.put('https://localhost:7011/api/users/updateProfile', data)
             .then((result) => {
                 const dt = result.data;
-                
-                if (dt.statusCode === 100) {
+                if (dt.statusCode === 200) {
+                    getProfile();
+                }else if (dt.statusCode === 100) {
                     setErrorState(dt.statusMessage)
                 }
             })
