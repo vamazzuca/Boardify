@@ -9,7 +9,7 @@
  • REST API Backend built with C# and .NET using ASP.NET Core.   
  • Used MySQL database for storing product, cart and profile information.  
 
- Tech Stack
+ Tech Stack  
  • React  
  • JavaScript  
  • SASS  
