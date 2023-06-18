@@ -1,6 +1,21 @@
 # Boardify
  E-commerce site for Mechanical keyboards.
 
+ Description
+ • A fullstack e-Commerce site for selling mechanical keyboards. 
+ • Users can create a profile account and browse the store to shop for their favorite products. 
+ • Admin accounts can add, edit and delete products in order to keep the store up to date. 
+ • Frontend built with React, SASS, and Material UI for icons and button styling. 
+ • REST API Backend built with C# and .NET using ASP.NET Core. 
+ • Used MySQL database for storing product, cart and profile information.
+
+ Tech Stack
+ • React
+ • JavaScript
+ • SASS
+ • C#
+ • .NET
+ • MySQL
 
 Images
 
