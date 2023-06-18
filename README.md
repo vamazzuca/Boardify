@@ -16,7 +16,7 @@
  • SASS  
  • C#  
  • .NET  
- • MySQL 
+ • MySQL   
  • Cloudinary  
 
 Video Demo
